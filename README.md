@@ -6,7 +6,7 @@ Node.js
  v18 o superior
 
 MongoDB
- (local con Compass o en Atlas)
+ (local con Compass o en Atlas, yo utilize compass en Local)
 
 Postman
  (para ejecutar las pruebas incluidas)
