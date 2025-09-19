@@ -27,7 +27,7 @@ npm run dev
 
 Servidor disponible en:
 http://localhost:4000 
-///////////////////////////////////////////////////////////////////////////////
+
 Endpoints disponibles
 Usuarios
 
@@ -42,7 +42,7 @@ POST /events → Crear evento (requiere token).
 GET /events → Listar eventos (con paginación y filtros).
 
 POST /events/:id/register → Inscribirse en un evento (requiere token).
-///////////////////////////////////////////////////////////////////////////////
+
 Pruebas con Postman
 En el proyecto se incluye la colección:
 Prueba_backend.postman_collection.json
