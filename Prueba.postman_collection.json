@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "Prueba Backend Node-Mongo",
+    "_postman_id": "abcd1234-5678-90ef-abcd-1234567890ef",
+    "description": "Colección de pruebas con variables para backend Node.js + Express + MongoDB",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/register",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "register"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Juan\",\n  \"email\": \"juan@example.com\",\n  \"password\": \"ClaveSegura123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"juan@example.com\",\n  \"password\": \"ClaveSegura123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Events - Create Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/events",
+          "host": ["{{baseUrl}}"],
+          "path": ["events"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Conferencia Node.js\",\n  \"description\": \"Evento de prueba con Express y MongoDB\",\n  \"date\": \"2099-01-01T10:00:00.000Z\",\n  \"capacity\": 50\n}"
+        }
+      }
+    },
+    {
+      "name": "Events - List Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/events",
+          "host": ["{{baseUrl}}"],
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Events - Register to Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/events/{{eventId}}/register",
+          "host": ["{{baseUrl}}"],
+          "path": ["events", "{{eventId}}", "register"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" },
+    { "key": "token", "value": "" },
+    { "key": "eventId", "value": "" }
+  ]
+}
